@@ -77,7 +77,7 @@ footer { background: var(--ink); color: var(--paper); padding: 64px 0 36px; }
   }
   .footer-col { text-align: center; }
   .footer-col h4, .footer-col a, .footer-col p { text-align: center; }
-  .footer-bottom { padding: 0 5vw; flex-direction: column; gap: 6px; align-items: center; text-align: center; font-size: 10px; width: 100%; }
+  .footer-bottom { padding: 0 5vw; flex-direction: column; gap: 6px; align-items: center; text-align: center; font-size: 12px; width: 100%; }
   .footer-brand p { font-size: 13px; text-align: center; }
   .footer-col-contact-wa { display: none; }
 }

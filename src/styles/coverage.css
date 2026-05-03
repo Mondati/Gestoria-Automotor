@@ -81,7 +81,7 @@
 
 .coverage-stat span {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(244, 236, 213, 0.45);

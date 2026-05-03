@@ -76,7 +76,7 @@ nav.scrolled {
 
 .nav-cta {
   font-family: var(--mono) !important;
-  font-size: 11px !important;
+  font-size: 13px !important;
   letter-spacing: 0.16em !important;
   background: var(--ink);
   color: var(--paper) !important;
@@ -159,7 +159,7 @@ nav.scrolled {
 
 .drawer-cta {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   text-decoration: none;

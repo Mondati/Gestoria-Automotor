@@ -1,0 +1,186 @@
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 120;
+  padding: 18px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transition: padding 0.35s;
+}
+
+nav::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 78px;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.35s, border-color 0.35s, height 0.35s;
+  z-index: -1;
+}
+
+nav.scrolled::before {
+  background: rgba(244,236,213,0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: rgba(201,182,144,0.4);
+  height: 66px;
+}
+
+nav.scrolled {
+  padding: 12px 0;
+}
+
+/* ── Desktop links ─────────────────────────────────────────────── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  list-style: none;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 6vw;
+  box-sizing: border-box;
+}
+
+.nav-links li { flex: 0 0 auto; }
+
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--ink-2);
+  text-decoration: none;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.2s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: var(--ink);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  font-family: var(--mono) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.16em !important;
+  background: var(--ink);
+  color: var(--paper) !important;
+  padding: 11px 20px !important;
+  border-radius: 0 !important;
+  transition: background 0.2s !important;
+}
+
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--accent-deep); color: var(--paper) !important; }
+
+/* ── Burger button ─────────────────────────────────────────────── */
+.nav-burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  padding: 8px;
+  margin-right: 5vw;
+  position: relative;
+  z-index: 110;
+}
+
+/* ── Side drawer (full-screen) ─────────────────────────────────── */
+.side-drawer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--paper);
+  z-index: 130;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(.25,.46,.45,.94);
+  flex-direction: column;
+}
+
+.side-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.side-drawer-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 80px 10vw;
+  overflow-y: auto;
+}
+
+.drawer-link {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  text-decoration: none;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(201,182,144,0.3);
+  transition: color 0.2s;
+}
+
+.drawer-link:hover { color: var(--ink); }
+
+.drawer-cta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--paper);
+  background: var(--ink);
+  padding: 18px 0;
+  margin-top: 40px;
+  display: block;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.drawer-cta:hover { background: var(--accent-deep); }
+
+/* ── Mobile breakpoint ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-burger { display: flex; }
+  nav { padding: 12px 0; justify-content: flex-end; }
+  nav.scrolled { padding: 8px 0; }
+  nav::before { height: 56px; }
+  nav.scrolled::before { height: 48px; }
+  .side-drawer { display: flex; }
+}

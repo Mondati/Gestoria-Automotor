@@ -1,0 +1,102 @@
+.advisory { background: var(--paper); padding-bottom: 120px; }
+
+.advisory-spread {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.advisory-quote {
+  position: sticky;
+  top: 120px;
+}
+
+.advisory-quote-mark {
+  font-family: var(--display);
+  font-size: 120px;
+  line-height: 0.6;
+  color: var(--accent-deep);
+  font-style: italic;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.advisory-quote-text {
+  font-family: var(--display);
+  font-size: clamp(26px, 2.8vw, 38px);
+  line-height: 1.2;
+  color: var(--ink);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.advisory-quote-text em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent-deep); }
+
+.advisory-quote-rule {
+  width: 60px;
+  height: 1px;
+  background: var(--ink);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.advisory-quote-attr {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.advisory-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.advisory-item {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 28px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.advisory-item:first-child { padding-top: 0; }
+.advisory-item:last-child { border-bottom: none; }
+
+.advisory-item-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--accent-deep);
+  padding-top: 6px;
+}
+
+.advisory-item h3 {
+  font-family: var(--display);
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.advisory-item p {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+@media (max-width: 900px) {
+  .advisory-spread { grid-template-columns: 1fr; gap: 48px; }
+  .advisory-quote { position: static; }
+}
+
+@media (max-width: 760px) {
+  .advisory { padding: 60px 0 50px; }
+  .advisory-quote-mark { font-size: 60px !important; }
+  .advisory-quote p { font-size: 20px !important; line-height: 1.4; }
+}

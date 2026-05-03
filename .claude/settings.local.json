@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell *)",
+      "PowerShell(Get-Content *)",
+      "PowerShell($content = Get-Content 'C:\\\\Users\\\\tomba\\\\Downloads\\\\ga.html' -Raw; $start = $content.IndexOf\\('const css = `'\\); if \\($start -eq -1\\) { $start = $content.IndexOf\\(\"const CSS\"\\); Write-Host \"CSS at: $start\" } else { Write-Host \"css at: $start\"; $content.Substring\\($start, 5000\\) })",
+      "PowerShell($content = Get-Content 'C:\\\\Users\\\\tomba\\\\Downloads\\\\ga.html' -Raw; $start = $content.IndexOf\\('.hero {'\\); if \\($start -ne -1\\) { $content.Substring\\($start, 5000\\) } else { Write-Host \"not found\" })",
+      "Bash(Get-ChildItem -Recurse -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\")",
+      "Bash(Select-Object FullName, PSIsContainer)",
+      "Bash(Sort-Object FullName)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\" -Recurse | ForEach-Object { $_.FullName })"
+    ]
+  }
+}

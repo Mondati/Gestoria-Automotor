@@ -1,0 +1,39 @@
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.85s cubic-bezier(.2,.7,.2,1), transform 0.85s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.16s; }
+.reveal-d3 { transition-delay: 0.24s; }
+.reveal-d4 { transition-delay: 0.32s; }
+.reveal-d5 { transition-delay: 0.4s; }
+
+.word-reveal {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding: 0 0.14em;
+  margin: 0 -0.14em;
+  line-height: 1.05;
+}
+
+.word-reveal > span {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 0.85s cubic-bezier(.2,.8,.2,1);
+}
+
+.word-reveal.visible > span { transform: translateY(0); }
+
+.word-reveal-stagger > .word-reveal:nth-child(1) > span { transition-delay: 0s; }
+.word-reveal-stagger > .word-reveal:nth-child(2) > span { transition-delay: 0.08s; }
+.word-reveal-stagger > .word-reveal:nth-child(3) > span { transition-delay: 0.16s; }
+.word-reveal-stagger > .word-reveal:nth-child(4) > span { transition-delay: 0.24s; }
+.word-reveal-stagger > .word-reveal:nth-child(5) > span { transition-delay: 0.32s; }

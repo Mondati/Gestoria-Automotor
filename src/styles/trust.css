@@ -76,8 +76,8 @@
 /* Regular cells */
 .trust-cell-num {
   font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: 0.18em;
+  font-size: 13px;
+  letter-spacing: 0.2em;
   color: var(--accent-deep);
   font-weight: 500;
 }
@@ -85,7 +85,7 @@
 .trust-cell h3 {
   font-family: var(--display);
   font-size: clamp(22px, 2.2vw, 28px);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.01em;
   margin-top: 8px;
@@ -97,7 +97,7 @@
   line-height: 1.55;
   color: var(--ink-2);
   margin-top: 4px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .trust-cell--feature p { color: var(--paper); }

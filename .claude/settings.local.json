@@ -8,7 +8,17 @@
       "Bash(Get-ChildItem -Recurse -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\")",
       "Bash(Select-Object FullName, PSIsContainer)",
       "Bash(Sort-Object FullName)",
-      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\" -Recurse | ForEach-Object { $_.FullName })"
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\" -Recurse | ForEach-Object { $_.FullName })",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(curl -sI \"https://api.anthropic.com/v1/design/h/u9DxsHa9eXxHqPWZnKLL2A?open_file=Landing+Page.html\")",
+      "Bash(curl *)",
+      "Read(//tmp/**)",
+      "Bash(mv /tmp/design.html /tmp/design.gz)",
+      "Bash(mkdir -p /tmp/design)",
+      "Bash(gunzip -c /tmp/design.gz)",
+      "Bash(tar -tf -)",
+      "Bash(tar -xf -)",
+      "Bash(cp *)"
     ]
   }
 }

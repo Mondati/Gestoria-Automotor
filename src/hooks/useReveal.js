@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 export function useReveal() {
   useEffect(() => {
-    const els = document.querySelectorAll('.reveal, .word-reveal');
+    const els = document.querySelectorAll('.reveal, .word-reveal, .reveal-clip');
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {

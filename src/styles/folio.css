@@ -9,29 +9,37 @@
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ink-2);
-  mix-blend-mode: multiply;
+  color: var(--burgundy);
   display: flex;
   align-items: center;
   gap: 16px;
   pointer-events: none;
-  transition: opacity 0.4s;
+  transition: color 0.4s ease;
 }
 
 .folio-num {
-  font-weight: 500;
-  color: var(--ink);
+  font-weight: 600;
+  color: var(--burgundy);
+  transition: color 0.4s ease;
 }
 
 .folio-line {
   width: 28px;
   height: 1px;
-  background: var(--ink-2);
-  opacity: 0.4;
+  background: var(--burgundy);
+  opacity: 0.55;
+  transition: background 0.4s ease, opacity 0.4s ease;
 }
 
 .folio-label {
-  opacity: 0.7;
+  opacity: 0.85;
+  transition: opacity 0.4s ease;
 }
+
+/* Variante sobre fondos oscuros */
+.folio.folio--on-dark              { color: var(--paper); }
+.folio.folio--on-dark .folio-num   { color: var(--gold); }
+.folio.folio--on-dark .folio-line  { background: var(--gold); opacity: 0.7; }
+.folio.folio--on-dark .folio-label { opacity: 0.8; }
 
 @media (max-width: 900px) { .folio { display: none; } }

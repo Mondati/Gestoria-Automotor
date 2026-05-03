@@ -20,7 +20,7 @@ export function Footer() {
             <h4>Contacto</h4>
             <a href={WA1} target="_blank" rel="noreferrer" className="footer-col-contact-wa">261 597-1624</a>
             <a href={WA2} target="_blank" rel="noreferrer" className="footer-col-contact-wa">261 657-3387</a>
-            <p>Almirante Brown 587<br/>Tupungato, Mendoza</p>
+            <p>Almirante Brown 584<br/>Tupungato, Mendoza</p>
           </div>
         </div>
       </div>

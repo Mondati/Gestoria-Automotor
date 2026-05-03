@@ -1,8 +1,8 @@
 import { ArrowRight } from './Icons';
 
 export function Location() {
-  const mapsUrl = "https://maps.google.com/?q=Almirante+Brown+587,+Tupungato,+Mendoza";
-  const embedUrl = "https://www.google.com/maps?q=Almirante+Brown+587,+Tupungato,+Mendoza&output=embed";
+  const mapsUrl = "https://maps.google.com/?q=Almirante+Brown+584,+Tupungato,+Mendoza";
+  const embedUrl = "https://www.google.com/maps?q=Almirante+Brown+584,+Tupungato,+Mendoza&output=embed";
 
   return (
     <section className="location" id="ubicacion">
@@ -15,7 +15,7 @@ export function Location() {
               <span>Dónde estamos</span>
             </div>
             <h2 className="reveal reveal-d1">Visitanos en<br/><em>Tupungato</em></h2>
-            <p className="location-address reveal reveal-d2">Almirante Brown 587<br/>Tupungato, Mendoza</p>
+            <p className="location-address reveal reveal-d2">Almirante Brown 584<br/>Tupungato, Mendoza</p>
             <a href={mapsUrl} target="_blank" rel="noreferrer" className="btn-secondary">
               Ver en Google Maps <ArrowRight />
             </a>
@@ -24,7 +24,7 @@ export function Location() {
           <div className="location-map reveal reveal-d2">
             <iframe
               src={embedUrl}
-              title="Mapa - Almirante Brown 587, Tupungato"
+              title="Mapa - Almirante Brown 584, Tupungato"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen

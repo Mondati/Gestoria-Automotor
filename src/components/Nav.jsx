@@ -53,15 +53,17 @@ export function Nav({ wa }) {
 
   return (
     <>
-      <nav className={scrolled ? 'scrolled' : ''}>
-        <ul className="nav-links">
-          {links.map(x => <li key={x.l}><a href={x.h}>{x.l}</a></li>)}
-          <li><a href={wa} target="_blank" rel="noreferrer" className="nav-cta">WhatsApp</a></li>
-        </ul>
-        <button className="nav-burger" onClick={() => setOpen(true)} aria-label="Abrir menú">
-          <MenuIcon />
-        </button>
-      </nav>
+      <header>
+        <nav className={scrolled ? 'scrolled' : ''}>
+          <ul className="nav-links">
+            {links.map(x => <li key={x.l}><a href={x.h}>{x.l}</a></li>)}
+            <li><a href={wa} target="_blank" rel="noreferrer" className="nav-cta">WhatsApp</a></li>
+          </ul>
+          <button className="nav-burger" onClick={() => setOpen(true)} aria-label="Abrir menú">
+            <MenuIcon />
+          </button>
+        </nav>
+      </header>
 
       <div className={`side-drawer${open ? ' open' : ''}`}>
         <button className="drawer-close" onClick={() => setOpen(false)} aria-label="Cerrar menú">

@@ -1,0 +1,12 @@
+{
+  "name": "Gestoría del Automotor",
+  "short_name": "Gestoría",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4ecd5",
+  "theme_color": "#1f1a14",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

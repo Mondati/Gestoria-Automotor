@@ -29,7 +29,7 @@ export function Trust() {
 
         <div className="trust-grid">
           {trustValues.map((v, i) => (
-            <div key={i} className={`trust-cell reveal reveal-d${(i % 4) + 1}`}>
+            <div key={i} className={`trust-cell${i === 0 ? ' trust-cell--feature' : ''} reveal reveal-d${(i % 4) + 1}`}>
               <div className="trust-cell-num">— {v.num}</div>
               <h3>{v.title}</h3>
               <p>{v.text}</p>

@@ -7,7 +7,7 @@ const processSteps = [
 
 export function Process() {
   return (
-    <section className="process" id="proceso">
+    <section className="process" id="proceso" data-theme="dark">
       <div className="container">
         <div className="section-head">
           <div className="section-head-left">

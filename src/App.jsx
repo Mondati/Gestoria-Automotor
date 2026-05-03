@@ -10,7 +10,6 @@ import { Advisory } from './components/Advisory'
 import { Coverage } from './components/Coverage'
 import { Location } from './components/Location'
 import { Closing as Contact } from './components/Contact'
-import { Footer } from './components/Footer'
 
 import './styles/global.css'
 import './styles/components.css'
@@ -25,7 +24,7 @@ import './styles/advisory.css'
 import './styles/coverage.css'
 import './styles/location.css'
 import './styles/contact.css'
-import './styles/footer.css'
+
 
 const WA1 = "https://wa.me/542615971624?text=Hola%2C%20consulta%20sobre%20tr%C3%A1mites%20vehiculares";
 
@@ -36,7 +35,7 @@ function App() {
     <>
       <Folio />
       <Nav wa={WA1} />
-      <Hero wa={WA1} />
+      <Hero />
       <Trust />
       <Services wa={WA1} />
       <Process />
@@ -44,7 +43,6 @@ function App() {
       <Coverage />
       <Location />
       <Contact />
-      <Footer />
       <a href={WA1} target="_blank" rel="noreferrer" className="wa-float" aria-label="WhatsApp">
         <WASvg />
       </a>

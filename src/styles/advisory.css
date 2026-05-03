@@ -1,22 +1,21 @@
-.advisory { background: var(--paper); padding-bottom: 120px; }
-
-.advisory-spread {
-  display: grid;
-  grid-template-columns: 5fr 7fr;
-  gap: 80px;
-  align-items: start;
+.advisory {
+  background: var(--paper);
+  padding-bottom: 120px;
 }
 
-.advisory-quote {
-  position: sticky;
-  top: 120px;
+/* FIX: advisory-spread ahora es grid de 2 columnas */
+.advisory-spread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
 }
 
 .advisory-quote-mark {
   font-family: var(--display);
   font-size: 120px;
   line-height: 0.6;
-  color: var(--accent-deep);
+  color: var(--burgundy);
   font-style: italic;
   margin-bottom: 16px;
   font-weight: 400;
@@ -31,12 +30,17 @@
   letter-spacing: -0.01em;
 }
 
-.advisory-quote-text em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent-deep); }
+.advisory-quote-text em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-deep);
+}
 
 .advisory-quote-rule {
   width: 60px;
   height: 1px;
-  background: var(--ink);
+  background: var(--burgundy);
   margin-top: 32px;
   margin-bottom: 12px;
 }
@@ -45,6 +49,7 @@
   font-family: var(--mono);
   font-size: 10.5px;
   letter-spacing: 0.18em;
+  padding-top: 20px;
   text-transform: uppercase;
   color: var(--ink-2);
 }
@@ -63,11 +68,11 @@
 }
 
 .advisory-item:first-child { padding-top: 0; }
-.advisory-item:last-child { border-bottom: none; }
+.advisory-item:last-child  { border-bottom: none; }
 
 .advisory-item-num {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.16em;
   color: var(--accent-deep);
@@ -85,18 +90,39 @@
 
 .advisory-item p {
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.55;
   color: var(--ink-2);
 }
 
+/* Eyebrow 05 uses burgundy */
+.advisory .eyebrow-num {
+  color: var(--burgundy);
+}
+
 @media (max-width: 900px) {
-  .advisory-spread { grid-template-columns: 1fr; gap: 48px; }
-  .advisory-quote { position: static; }
+  .advisory-spread {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
 }
 
 @media (max-width: 760px) {
-  .advisory { padding: 60px 0 50px; }
-  .advisory-quote-mark { font-size: 60px !important; }
-  .advisory-quote p { font-size: 20px !important; line-height: 1.4; }
+  .advisory {
+    padding: 60px 0 50px;
+  }
+  .advisory-quote-mark {
+    font-size: 60px;
+  }
+  .advisory-quote-text {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  .advisory-item {
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+  }
+  .advisory-item-num {
+    white-space: nowrap;
+  }
 }

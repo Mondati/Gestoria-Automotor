@@ -1,8 +1,20 @@
+import { useEffect, useState } from 'react';
 import { SplitReveal } from './SplitReveal';
 
 export function Hero() {
+  const [pastHero, setPastHero] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setPastHero(window.scrollY > window.innerHeight * 0.10);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <section className="hero" id="inicio">
+    <section className={`hero${pastHero ? ' hero--past' : ''}`} id="inicio">
       <div className="hero-grid-bg"></div>
       <div className="hero-top-rule"></div>
 

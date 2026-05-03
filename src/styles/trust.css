@@ -100,6 +100,8 @@
   font-weight: 700;
 }
 
+.trust-cell--feature p { color: var(--paper); }
+
 @media (max-width: 900px) {
   .trust-grid {
     grid-template-columns: 1fr 1fr;

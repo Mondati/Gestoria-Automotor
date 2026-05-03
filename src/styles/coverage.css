@@ -29,6 +29,7 @@
   color: var(--gold);
 }
 
+
 /* Full-bleed stats band */
 .coverage-stats {
   display: grid;

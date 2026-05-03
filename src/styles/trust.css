@@ -135,4 +135,8 @@
   .trust-cell--feature h3 {
     font-size: clamp(26px, 7vw, 34px);
   }
+  .trust-cell--feature p {
+    color: var(--paper);
+    opacity: 1;
+  }
 }

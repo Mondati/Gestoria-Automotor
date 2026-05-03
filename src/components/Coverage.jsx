@@ -52,7 +52,7 @@ export function Coverage() {
           <span>Alcance nacional</span>
         </div>
         <h2 className="reveal reveal-d1">
-          Trabajamos en <em>todo el país</em>—<br/>
+          Trabajamos en <em style={{ whiteSpace: 'nowrap' }}>todo el país</em>,<br/>
           no importa <em>dónde</em> estés.
         </h2>
       </div>

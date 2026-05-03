@@ -70,6 +70,7 @@
   padding-top: 32px;
   max-width: 32ch;
   border-top: 1px solid rgba(201, 165, 100, 0.25);
+  font-weight: 500;
 }
 
 /* Regular cells */
@@ -96,6 +97,7 @@
   line-height: 1.55;
   color: var(--ink-2);
   margin-top: 4px;
+  font-weight: 500;
 }
 
 @media (max-width: 900px) {
@@ -132,10 +134,14 @@
     border-radius: 4px;
     padding: 28px 22px 32px;
   }
+  .trust-cell--feature .trust-cell-num {
+    font-size: 10.5px;
+  }
   .trust-cell--feature h3 {
-    font-size: clamp(26px, 7vw, 34px);
+    font-size: clamp(22px, 2.2vw, 28px);
   }
   .trust-cell--feature p {
+    font-size: 18px;
     color: var(--paper);
     opacity: 1;
   }

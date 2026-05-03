@@ -63,7 +63,7 @@
 
 .trust-cell--feature p {
   font-family: var(--serif);
-  font-size: 19px;
+  font-size: 21px;
   line-height: 1.55;
   color: var(--paper);
   margin-top: auto;
@@ -92,7 +92,7 @@
 
 .trust-cell p {
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.55;
   color: var(--ink-2);
   margin-top: 4px;

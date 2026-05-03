@@ -52,5 +52,5 @@
   .location { padding: 60px 0 50px; }
   .location-spread { gap: 28px; }
   .location-map { aspect-ratio: 1/1; }
-  .location-address { font-size: 18px; }
+  .location-address { font-size: 20px; }
 }

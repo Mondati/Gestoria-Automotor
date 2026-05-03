@@ -54,7 +54,7 @@
 
 .closing-sub {
   font-family: var(--serif);
-  font-size: clamp(18px, 1.8vw, 22px);
+  font-size: clamp(20px, 2vw, 25px);
   line-height: 1.5;
   color: rgba(244, 236, 213, 0.6);
   max-width: 560px;
@@ -142,7 +142,7 @@
 @media (max-width: 760px) {
   .closing { padding: 80px 0 0; }
   .closing h2 { font-size: clamp(40px, 14vw, 64px) !important; line-height: 0.95 !important; }
-  .closing-sub { font-size: 16px !important; padding: 0 5vw; }
+  .closing-sub { font-size: 18px !important; padding: 0 5vw; }
   .closing-phones {
     flex-direction: column !important;
     gap: 10px !important;

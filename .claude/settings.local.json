@@ -18,7 +18,19 @@
       "Bash(gunzip -c /tmp/design.gz)",
       "Bash(tar -tf -)",
       "Bash(tar -xf -)",
-      "Bash(cp *)"
+      "Bash(cp *)",
+      "Bash(Get-ChildItem -Path . -Depth 2)",
+      "Bash(Select-Object -Property FullName, PSIsContainer)",
+      "Bash(Format-List)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(findstr /i \"Gestoría del Automotor\\\\|Transferencias\\\\|Tupungato\\\\|application/ld+json\" dist\\\\index.html)",
+      "Bash(Select-String -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\\\\dist\\\\index.html\" -Pattern \"Gestoría|Transferencias|application/ld\\\\+json|id=.main\")",
+      "Bash(Select-Object -First 10)",
+      "Bash(Format-List Line)",
+      "PowerShell(Select-String -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\\\\dist\\\\index.html\" -Pattern \"Gestoría|Transferencias|application/ld\\\\+json|id=\"\"main\"\"\" | Select-Object -First 8 | ForEach-Object { $_.Line.Substring\\(0, [Math]::Min\\(120, $_.Line.Length\\)\\) })",
+      "PowerShell(Select-String -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\\\\dist\\\\index.html\" -Pattern \"AutomotiveBusiness|id=\"\"main\"\"|Transferencia de dominio|Almirante Brown\" | Select-Object -First 6 | ForEach-Object { $_.Line.Substring\\(0, [Math]::Min\\(130, $_.Line.Length\\)\\) })",
+      "PowerShell(Select-String -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\\\\dist\\\\index.html\" -Pattern \"<main |Transferencia de dominio|Patentamiento|Inscripción\" | Select-Object -First 5 | ForEach-Object { $_.Line.Substring\\(0, [Math]::Min\\(150, $_.Line.Length\\)\\) })"
     ]
   }
 }

@@ -6,7 +6,7 @@
 }
 
 /* Invert eyebrow for dark bg */
-.coverage .eyebrow            { color: rgba(244, 236, 213, 0.5); }
+.coverage .eyebrow            { color: #f4ecd580; }
 .coverage .eyebrow-num        { color: var(--gold); }
 .coverage .eyebrow-rule       { background: rgba(244, 236, 213, 0.25); opacity: 1; }
 

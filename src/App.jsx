@@ -33,16 +33,19 @@ function App() {
 
   return (
     <>
+      <a href="#main" className="skip-link">Saltar al contenido principal</a>
       <Folio />
       <Nav wa={WA1} />
-      <Hero />
-      <Trust />
-      <Services wa={WA1} />
-      <Process />
-      <Advisory />
-      <Coverage />
-      <Location />
-      <Contact />
+      <main id="main">
+        <Hero />
+        <Trust />
+        <Services wa={WA1} />
+        <Process />
+        <Advisory />
+        <Coverage />
+        <Location />
+        <Contact />
+      </main>
       <a href={WA1} target="_blank" rel="noreferrer" className="wa-float" aria-label="WhatsApp">
         <WASvg />
       </a>

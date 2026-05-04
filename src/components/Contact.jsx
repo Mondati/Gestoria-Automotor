@@ -8,7 +8,7 @@ const WA2 =
 export function Closing() {
   return (
     <section className="closing" id="contacto" data-theme="dark">
-      <div className="closing-watermark">G·A</div>
+      <div className="closing-watermark">G S</div>
       <div className="closing-content">
         <div className="closing-eyebrow eyebrow reveal">
           <span className="eyebrow-num">08</span>
@@ -49,10 +49,15 @@ export function Closing() {
           <a href="#asesoramiento">Asesoramiento</a>
           <a href="#ubicacion">Ubicación</a>
         </nav>
-        <div className="closing-footer-bottom">
-          <p>© MMXXVI Gestoría del Automotor</p>
-          <p>Tupungato · Mendoza · Argentina</p>
-        </div>
+        <address className="closing-footer-nap">
+          <span>Gestoría del Automotor</span>
+          <span aria-hidden="true" className="nap-sep">·</span>
+          <span>Almirante Brown 584, Tupungato, Mendoza, Argentina</span>
+          <span aria-hidden="true" className="nap-sep">·</span>
+          <a href="tel:+542615971624">261 597-1624</a>
+          <span aria-hidden="true" className="nap-sep">·</span>
+          <a href="tel:+542616573387">261 657-3387</a>
+        </address>
       </footer>
     </section>
   );

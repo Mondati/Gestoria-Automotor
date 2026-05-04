@@ -22,7 +22,7 @@ export function Process() {
           </div>
           <div className="section-head-right">
             <p className="reveal reveal-d2">
-              Un proceso transparente y predecible. Sabés qué pasa en cada etapa y nunca quedás en la nada.
+              Un proceso transparente y predecible. Sabes que pasa en cada etapa y nunca quedas en la nada.
             </p>
           </div>
         </div>

@@ -26,6 +26,8 @@ export function Location() {
               src={embedUrl}
               title="Mapa - Almirante Brown 584, Tupungato"
               loading="lazy"
+              width="100%"
+              height="100%"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             ></iframe>

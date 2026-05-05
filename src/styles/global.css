@@ -23,6 +23,10 @@
 
 html { scroll-behavior: smooth; }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--sans);
   background-color: var(--paper);

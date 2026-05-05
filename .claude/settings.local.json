@@ -30,7 +30,10 @@
       "Bash(Format-List Line)",
       "PowerShell(Select-String -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\\\\dist\\\\index.html\" -Pattern \"Gestoría|Transferencias|application/ld\\\\+json|id=\"\"main\"\"\" | Select-Object -First 8 | ForEach-Object { $_.Line.Substring\\(0, [Math]::Min\\(120, $_.Line.Length\\)\\) })",
       "PowerShell(Select-String -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\\\\dist\\\\index.html\" -Pattern \"AutomotiveBusiness|id=\"\"main\"\"|Transferencia de dominio|Almirante Brown\" | Select-Object -First 6 | ForEach-Object { $_.Line.Substring\\(0, [Math]::Min\\(130, $_.Line.Length\\)\\) })",
-      "PowerShell(Select-String -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\\\\dist\\\\index.html\" -Pattern \"<main |Transferencia de dominio|Patentamiento|Inscripción\" | Select-Object -First 5 | ForEach-Object { $_.Line.Substring\\(0, [Math]::Min\\(150, $_.Line.Length\\)\\) })"
+      "PowerShell(Select-String -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\\\\dist\\\\index.html\" -Pattern \"<main |Transferencia de dominio|Patentamiento|Inscripción\" | Select-Object -First 5 | ForEach-Object { $_.Line.Substring\\(0, [Math]::Min\\(150, $_.Line.Length\\)\\) })",
+      "WebFetch(domain:pagespeed.web.dev)",
+      "Bash(mkdir -p public/fonts)",
+      "Bash(cp node_modules/@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2 public/fonts/fraunces-variable.woff2)"
     ]
   }
 }

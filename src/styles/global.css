@@ -15,10 +15,10 @@
   --accent-deep: #8a6d44;
   --gold: #c9a564;
   --burgundy: #6b2e2a;
-  --display: 'Fraunces', serif;
+  --display: 'Fraunces', 'Fraunces Variable', serif;
   --serif: 'Cormorant Garamond', serif;
   --mono: 'DM Mono', monospace;
-  --sans: 'DM Sans', sans-serif;
+  --sans: 'DM Sans Variable', 'DM Sans', sans-serif;
 }
 
 html { scroll-behavior: smooth; }

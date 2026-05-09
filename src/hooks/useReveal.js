@@ -2,6 +2,16 @@ import { useEffect } from 'react';
 
 export function useReveal() {
   useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      document.querySelectorAll('.reveal, .word-reveal, .reveal-clip').forEach(el => {
+        el.classList.add('visible');
+      });
+      return;
+    }
+
+    const observed = new WeakSet();
+
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -16,8 +26,8 @@ export function useReveal() {
         ? root.querySelectorAll('.reveal, .word-reveal, .reveal-clip')
         : [];
       nodes.forEach(el => {
-        if (!el.dataset.revealObserved) {
-          el.dataset.revealObserved = '1';
+        if (!observed.has(el)) {
+          observed.add(el);
           io.observe(el);
         }
       });

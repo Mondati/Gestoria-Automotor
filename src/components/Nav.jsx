@@ -32,23 +32,14 @@ export function Nav({ wa }) {
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 30);
-    window.addEventListener('scroll', fn);
+    window.addEventListener('scroll', fn, { passive: true });
     fn();
     return () => window.removeEventListener('scroll', fn);
   }, []);
 
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
-    };
+    document.documentElement.classList.toggle('drawer-open', open);
+    return () => document.documentElement.classList.remove('drawer-open');
   }, [open]);
 
   return (
@@ -57,15 +48,26 @@ export function Nav({ wa }) {
         <nav className={scrolled ? 'scrolled' : ''}>
           <ul className="nav-links">
             {links.map(x => <li key={x.l}><a href={x.h}>{x.l}</a></li>)}
-            <li><a href={wa} target="_blank" rel="noreferrer" className="nav-cta">WhatsApp</a></li>
+            <li><a href={wa} target="_blank" rel="noreferrer" className="nav-cta"><span>WhatsApp</span></a></li>
           </ul>
-          <button className="nav-burger" onClick={() => setOpen(true)} aria-label="Abrir menú">
+          <button
+            className="nav-burger"
+            onClick={() => setOpen(true)}
+            aria-label="Abrir menú"
+            aria-expanded={open}
+            aria-controls="side-drawer"
+          >
             <MenuIcon />
           </button>
         </nav>
       </header>
 
-      <div className={`side-drawer${open ? ' open' : ''}`}>
+      <div
+        className={`side-drawer${open ? ' open' : ''}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menú de navegación"
+      >
         <button className="drawer-close" onClick={() => setOpen(false)} aria-label="Cerrar menú">
           <CloseIcon />
         </button>
@@ -82,7 +84,7 @@ export function Nav({ wa }) {
             className="drawer-cta"
             onClick={() => setOpen(false)}
           >
-            Consultar por WhatsApp
+            <span>Consultar por WhatsApp</span>
           </a>
         </div>
       </div>

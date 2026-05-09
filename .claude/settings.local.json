@@ -33,7 +33,14 @@
       "PowerShell(Select-String -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\\\\dist\\\\index.html\" -Pattern \"<main |Transferencia de dominio|Patentamiento|Inscripción\" | Select-Object -First 5 | ForEach-Object { $_.Line.Substring\\(0, [Math]::Min\\(150, $_.Line.Length\\)\\) })",
       "WebFetch(domain:pagespeed.web.dev)",
       "Bash(mkdir -p public/fonts)",
-      "Bash(cp node_modules/@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2 public/fonts/fraunces-variable.woff2)"
+      "Bash(cp node_modules/@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2 public/fonts/fraunces-variable.woff2)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\" -Force)",
+      "Bash(Select-Object Name, FullName)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\tomba\\\\OneDrive\\\\Escritorio\\\\Gestoria\" -Recurse -Include \"*.jsx\", \"*.js\", \"*.css\", \"*.json\", \"*.html\")",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Sort-Object)",
+      "Skill(design-md)",
+      "Bash(npx react-doctor@latest *)"
     ]
   }
 }

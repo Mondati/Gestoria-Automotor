@@ -18,6 +18,7 @@ nav::before {
   background: transparent;
   transition: background 0.35s, height 0.35s;
   z-index: -1;
+  will-change: background, height;
 }
 
 nav.scrolled::before {
@@ -40,7 +41,7 @@ nav.scrolled {
   gap: 24px;
   list-style: none;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 6vw;
   box-sizing: border-box;
@@ -53,7 +54,7 @@ nav.scrolled {
   font-size: 11.5px;
   color: var(--ink-2);
   text-decoration: none;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--ls-normal);
   text-transform: uppercase;
   font-weight: 400;
   position: relative;
@@ -73,19 +74,76 @@ nav.scrolled {
 .nav-links a:hover { color: var(--ink); }
 .nav-links a:hover::after { width: 100%; }
 
+.nav-links a[aria-current="page"],
+.nav-links a[aria-current="true"] {
+  color: var(--ink);
+}
+.nav-links a[aria-current="page"]::after,
+.nav-links a[aria-current="true"]::after {
+  width: 100%;
+}
+
+.nav-links a:focus-visible {
+  color: var(--ink);
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.nav-cta:focus-visible {
+  outline: 2px solid var(--accent-deep);
+  outline-offset: 3px;
+}
+
+.nav-burger:focus-visible,
+.drawer-close:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.drawer-link:focus-visible {
+  color: var(--ink);
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.drawer-cta:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: 3px;
+}
+
 .nav-cta {
   font-family: var(--mono) !important;
   font-size: 13px !important;
-  letter-spacing: 0.16em !important;
+  letter-spacing: var(--ls-normal) !important;
   background: var(--ink);
   color: var(--paper) !important;
   padding: 11px 20px !important;
   border-radius: 0 !important;
-  transition: background 0.2s !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: transform 0.15s ease !important;
 }
 
 .nav-cta::after { display: none !important; }
-.nav-cta:hover { background: var(--accent-deep); color: var(--paper) !important; }
+
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-deep);
+  transform: translateY(101%);
+  transition: transform 0.38s cubic-bezier(.2,.7,.2,1);
+  z-index: 0;
+}
+
+.nav-cta > * { position: relative; z-index: 1; }
+
+@media (hover: hover) {
+  .nav-cta:hover::before { transform: translateY(0); }
+}
+.nav-cta:active { transform: scale(0.97); }
 
 /* ── Burger button ─────────────────────────────────────────────── */
 .nav-burger {
@@ -145,7 +203,7 @@ nav.scrolled {
 .drawer-link {
   font-family: var(--mono);
   font-size: 13px;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   color: var(--ink-2);
   text-decoration: none;
@@ -159,7 +217,7 @@ nav.scrolled {
 .drawer-cta {
   font-family: var(--mono);
   font-size: 13px;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--ls-normal);
   text-transform: uppercase;
   text-decoration: none;
   color: var(--paper);
@@ -168,10 +226,27 @@ nav.scrolled {
   margin-top: 40px;
   display: block;
   text-align: center;
-  transition: background 0.2s;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease;
 }
 
-.drawer-cta:hover { background: var(--accent-deep); }
+.drawer-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-deep);
+  transform: translateY(101%);
+  transition: transform 0.38s cubic-bezier(.2,.7,.2,1);
+  z-index: 0;
+}
+
+.drawer-cta > * { position: relative; z-index: 1; }
+
+@media (hover: hover) {
+  .drawer-cta:hover::before { transform: translateY(0); }
+}
+.drawer-cta:active { transform: scale(0.98); }
 
 /* ── Mobile breakpoint ─────────────────────────────────────────── */
 @media (max-width: 900px) {

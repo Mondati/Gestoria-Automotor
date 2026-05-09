@@ -2,6 +2,7 @@
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.85s cubic-bezier(.2,.7,.2,1), transform 0.85s cubic-bezier(.2,.7,.2,1);
+  will-change: transform, opacity;
 }
 
 .reveal.visible {
@@ -28,6 +29,7 @@
   display: inline-block;
   transform: translateY(110%);
   transition: transform 0.85s cubic-bezier(.2,.8,.2,1);
+  will-change: transform;
 }
 
 .word-reveal.visible > span { transform: translateY(0); }
@@ -52,6 +54,7 @@
 .reveal-clip {
   clip-path: inset(0 100% 0 0);
   transition: clip-path 1.1s cubic-bezier(.16,1,.3,1);
+  will-change: clip-path;
 }
 .reveal-clip.visible {
   clip-path: inset(0 0% 0 0);
@@ -60,3 +63,43 @@
 .reveal-clip.reveal-d2 { transition-delay: 0.16s; }
 .reveal-clip.reveal-d3 { transition-delay: 0.24s; }
 .reveal-clip.reveal-d4 { transition-delay: 0.32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .word-reveal > span,
+  .reveal-clip {
+    will-change: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+  .word-reveal > span {
+    transform: translateY(0);
+    transition: none;
+  }
+  .reveal-clip {
+    clip-path: inset(0 0% 0 0);
+    transition: none;
+  }
+  .hero-title .word-reveal > span {
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    transition: none;
+  }
+  .hero-scroll-line {
+    animation: none;
+  }
+  .wa-float::after {
+    animation: none;
+  }
+  .btn-primary::before,
+  .btn-secondary::before,
+  .toc-item::before {
+    transition: none;
+  }
+}

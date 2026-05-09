@@ -17,7 +17,7 @@ export function Location() {
             <h2 className="reveal reveal-d1">Visitanos en<br/><em>Tupungato</em></h2>
             <p className="location-address reveal reveal-d2">Almirante Brown 584<br/>Tupungato, Mendoza</p>
             <a href={mapsUrl} target="_blank" rel="noreferrer" className="btn-secondary">
-              Ver en Google Maps <ArrowRight />
+              <span>Ver en Google Maps</span> <ArrowRight />
             </a>
           </div>
 

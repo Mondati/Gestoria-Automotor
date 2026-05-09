@@ -19,12 +19,25 @@
   --serif: 'Cormorant Garamond', serif;
   --mono: 'DM Mono', monospace;
   --sans: 'DM Sans Variable', 'DM Sans', sans-serif;
+
+  --ls-normal: 0.16em;
+  --ls-wide:   0.22em;
+  --ls-tight:  -0.02em;
+
+  --section-pad-desktop: 120px;
+  --section-pad-tablet:   80px;
+  --section-pad-mobile:   64px;
 }
 
 html { scroll-behavior: smooth; }
 
 html {
   overflow-x: hidden;
+}
+
+html.drawer-open,
+html.drawer-open body {
+  overflow: hidden;
 }
 
 body {
@@ -51,7 +64,7 @@ body::before {
 ::selection { background: var(--ink); color: var(--paper); }
 
 .container {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 clamp(24px, 6vw, 96px);
   width: 100%;

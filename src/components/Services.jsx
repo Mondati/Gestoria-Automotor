@@ -1,19 +1,21 @@
+import { Plate, ArrowRight } from './Icons';
+
 const services = [
-  { num: "I",    title: "Transferencias",        desc: "Compra-venta y cambios de titularidad de vehículos." },
-  { num: "II",   title: "Inscripción inicial 0 km", desc: "Alta de vehículos nuevos directo del concesionario." },
-  { num: "III",  title: "Patentamientos y bajas", desc: "Gestión completa de patentamiento y baja registral." },
-  { num: "IV",   title: "Denuncia de venta",     desc: "Protegete legalmente después de vender tu auto." },
-  { num: "V",    title: "Informes de dominio",   desc: "Deudas, multas, gravámenes y estado registral." },
-  { num: "VI",   title: "Prenda automotor",      desc: "Inscripción y cancelación de prenda sobre vehículos." },
-  { num: "VII",  title: "Cambio de radicación",  desc: "Cambio de jurisdicción del vehículo sin vueltas." },
-  { num: "VIII", title: "Turnos verificadora",   desc: "Gestión de turnos en planta verificadora y registro seccional." },
-  { num: "IX",   title: "Formularios",           desc: "Venta de formularios 08, 12, 59 y más." },
-  { num: "X",    title: "Duplicados",            desc: "Título, cédula verde y patente duplicados." },
+  { code: "TR 001", title: "Transferencias",           desc: "Compra-venta y cambios de titularidad de vehículos." },
+  { code: "0K 002", title: "Inscripción inicial 0 km",  desc: "Alta de vehículos nuevos directo del concesionario." },
+  { code: "PB 003", title: "Patentamientos y bajas",    desc: "Gestión completa de patentamiento y baja registral." },
+  { code: "DV 004", title: "Denuncia de venta",         desc: "Protegete legalmente después de vender tu auto." },
+  { code: "ID 005", title: "Informes de dominio",       desc: "Deudas, multas, gravámenes y estado registral." },
+  { code: "PR 006", title: "Prenda automotor",          desc: "Inscripción y cancelación de prenda sobre vehículos." },
+  { code: "CR 007", title: "Cambio de radicación",      desc: "Cambio de jurisdicción del vehículo sin vueltas." },
+  { code: "TV 008", title: "Turnos verificadora",       desc: "Turnos en planta verificadora y registro seccional." },
+  { code: "FM 009", title: "Formularios",               desc: "Venta de formularios 08, 12, 59 y más." },
+  { code: "DP 010", title: "Duplicados",                desc: "Título, cédula verde y patente duplicados." },
 ];
 
 export function Services({ wa }) {
   return (
-    <section className="services" id="servicios">
+    <section className="services" id="servicios" data-theme="dark">
       <div className="container">
         <div className="section-head">
           <div className="section-head-left">
@@ -33,22 +35,23 @@ export function Services({ wa }) {
           </div>
         </div>
 
-        <div className="services-toc">
+        <div className="services-grid">
           {services.map((s, i) => (
-            <a key={i}
+            <a key={s.code}
                href={wa}
                target="_blank"
                rel="noreferrer"
-               className="toc-item reveal"
-               style={{ transitionDelay: `${i * 0.04}s` }}>
-              <div className="toc-num">{s.num}</div>
-              <div className="toc-title">{s.title}</div>
-              <div className="toc-desc">{s.desc}</div>
-              <div className="toc-arrow">→</div>
+               className="service-row reveal"
+               style={{ transitionDelay: `${(i % 2) * 0.06}s` }}>
+              <Plate code={s.code} variant="service" />
+              <div className="service-row-text">
+                <div className="service-row-title">{s.title}</div>
+                <div className="service-row-desc">{s.desc}</div>
+              </div>
+              <span className="service-row-arrow"><ArrowRight /></span>
             </a>
           ))}
         </div>
-
       </div>
     </section>
   );

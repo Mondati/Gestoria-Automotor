@@ -44,26 +44,28 @@ const stats = [
 
 export function Coverage() {
   return (
-    <section className="coverage" id="cobertura" data-theme="dark">
+    <section className="coverage" id="cobertura">
       <div className="container">
-        <div className="coverage-eyebrow eyebrow reveal">
-          <span className="eyebrow-num">06</span>
-          <span className="eyebrow-rule"></span>
-          <span>Alcance nacional</span>
-        </div>
-        <h2 className="reveal reveal-d1">
-          Trabajamos en <em style={{ whiteSpace: 'nowrap' }}>todo el país</em>,<br/>
-          no importa <em>dónde</em> estés.
-        </h2>
-      </div>
-
-      <div className="coverage-stats">
-        {stats.map((s, i) => (
-          <div key={i} className={`coverage-stat reveal reveal-d${i + 1}`}>
-            <StatNumber val={s.val} sup={s.sup} duration={s.duration} />
-            <span>{s.label}</span>
+        <div className="coverage-head">
+          <div className="coverage-eyebrow eyebrow reveal">
+            <span className="eyebrow-num">06</span>
+            <span className="eyebrow-rule"></span>
+            <span>Alcance nacional</span>
           </div>
-        ))}
+          <h2 className="reveal reveal-d1">
+            Trabajamos en <em style={{ whiteSpace: 'nowrap' }}>todo el país</em>,<br/>
+            no importa <em>dónde</em> estés.
+          </h2>
+        </div>
+
+        <div className="coverage-stats">
+          {stats.map((s, i) => (
+            <div key={i} className={`coverage-stat reveal reveal-d${i + 1}`}>
+              <StatNumber val={s.val} sup={s.sup} duration={s.duration} />
+              <span>{s.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -8,9 +8,28 @@ export function WASvg() {
 
 export function ArrowRight() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <line x1="5" y1="12" x2="19" y2="12"/>
       <polyline points="12 5 19 12 12 19"/>
     </svg>
+  );
+}
+
+export function MapPin() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/>
+    </svg>
+  );
+}
+
+/* Argentine license-plate badge — shared brand motif.
+   variant: 'nav' (large) | 'service' (small). */
+export function Plate({ code, variant = 'service' }) {
+  return (
+    <div className={`plate plate--${variant}`}>
+      <div className="plate-country">ARGENTINA</div>
+      <div className="plate-code">{code}</div>
+    </div>
   );
 }

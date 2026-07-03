@@ -8,7 +8,8 @@ const WA2 =
 export function Closing() {
   return (
     <section className="closing" id="contacto" data-theme="dark">
-      <div className="closing-watermark">G S</div>
+      <div className="closing-road" aria-hidden="true"></div>
+
       <div className="closing-content">
         <div className="closing-eyebrow eyebrow reveal">
           <span className="eyebrow-num">08</span>
@@ -20,44 +21,30 @@ export function Closing() {
         </h2>
         <p className="closing-sub reveal reveal-d2">
           Tu auto, tu trámite, tu tiempo.{" "}
-          <em>Nosotros nos encargamos del resto.</em>
+          <strong>Nosotros nos encargamos del resto.</strong>
         </p>
         <div className="closing-phones reveal reveal-d3">
-          <a
-            href={WA1}
-            target="_blank"
-            rel="noreferrer"
-            className="btn-primary"
-          >
-            <WASvg /> <p className="num-wsp">261 597-1624</p> 
+          <a href={WA1} target="_blank" rel="noreferrer" className="btn-primary btn-wa">
+            <WASvg /> 261 597-1624
           </a>
-          <a
-            href={WA2}
-            target="_blank"
-            rel="noreferrer"
-            className="btn-primary"
-          >
-            <WASvg /> <p className="num-wsp">261 657-3387</p> 
+          <a href={WA2} target="_blank" rel="noreferrer" className="btn-primary btn-wa">
+            <WASvg /> 261 657-3387
           </a>
         </div>
       </div>
 
       <footer className="closing-footer">
-        <nav className="closing-footer-nav">
-          <a href="#servicios">Servicios</a>
-          <a href="#proceso">Proceso</a>
-          <a href="#asesoramiento">Asesoramiento</a>
-          <a href="#ubicacion">Ubicación</a>
-        </nav>
-        <address className="closing-footer-nap">
-          <span>Gestoría del Automotor</span>
-          <span aria-hidden="true" className="nap-sep">·</span>
-          <span>Almirante Brown 584, Tupungato, Mendoza, Argentina</span>
-          <span aria-hidden="true" className="nap-sep">·</span>
-          <a href="tel:+542615971624">261 597-1624</a>
-          <span aria-hidden="true" className="nap-sep">·</span>
-          <a href="tel:+542616573387">261 657-3387</a>
-        </address>
+        <div className="closing-footer-bar">
+          <nav className="closing-footer-nav">
+            <a href="#servicios">Servicios</a>
+            <a href="#proceso">Proceso</a>
+            <a href="#asesoramiento">Asesoramiento</a>
+            <a href="#ubicacion">Ubicación</a>
+          </nav>
+          <address className="closing-footer-nap">
+            Almirante Brown 584, Tupungato, Mendoza
+          </address>
+        </div>
       </footer>
     </section>
   );

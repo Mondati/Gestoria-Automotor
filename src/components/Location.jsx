@@ -1,23 +1,25 @@
-import { ArrowRight } from './Icons';
+import { ArrowRight, MapPin } from './Icons';
 
 export function Location() {
   const mapsUrl = "https://maps.google.com/?q=Almirante+Brown+584,+Tupungato,+Mendoza";
   const embedUrl = "https://www.google.com/maps?q=Almirante+Brown+584,+Tupungato,+Mendoza&output=embed";
 
   return (
-    <section className="location" id="ubicacion">
+    <section className="location" id="ubicacion" data-theme="dark">
       <div className="container">
         <div className="location-spread">
-          <div>
+          <div className="location-info">
             <div className="location-eyebrow eyebrow reveal">
               <span className="eyebrow-num">07</span>
               <span className="eyebrow-rule"></span>
               <span>Dónde estamos</span>
             </div>
             <h2 className="reveal reveal-d1">Visitanos en<br/><em>Tupungato</em></h2>
-            <p className="location-address reveal reveal-d2">Almirante Brown 584<br/>Tupungato, Mendoza</p>
-            <a href={mapsUrl} target="_blank" rel="noreferrer" className="btn-secondary">
-              <span>Ver en Google Maps</span> <ArrowRight />
+            <div className="location-chip reveal reveal-d2">
+              <MapPin /> Almirante Brown 584 · Tupungato · Mendoza
+            </div>
+            <a href={mapsUrl} target="_blank" rel="noreferrer" className="btn-secondary reveal reveal-d2">
+              Ver en Google Maps <ArrowRight />
             </a>
           </div>
 

@@ -1,130 +1,94 @@
 .process {
-  background: var(--ink);
-  color: var(--paper);
-  padding-bottom: 120px;
+  background: var(--bg-deep);
+  border-top: 3px solid var(--yellow);
+  padding: 112px 0;
   position: relative;
   overflow: hidden;
 }
 
-.process::before {
-  content: "";
+.process .eyebrow              { color: var(--yellow); }
+.process .section-head-left h2 { color: var(--text); }
+
+.process-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding-top: 50px;
+}
+
+.process-road {
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      ellipse 800px 400px at 100% 0%,
-      rgba(201, 165, 100, 0.08),
-      transparent 60%
-    ),
-    radial-gradient(
-      ellipse 600px 400px at 0% 100%,
-      rgba(107, 46, 42, 0.18),
-      transparent 60%
-    );
+  top: 12px;
+  left: 0; right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(90deg, var(--yellow) 0 32px, transparent 32px 58px);
+  opacity: 0.5;
   pointer-events: none;
 }
 
-.process .section-head {
-  border-bottom-color: rgba(244, 236, 213, 0.18);
-}
-.process .section-head-left h2 {
-  color: var(--paper);
-}
-.process .section-head-left h2 em {
-  color: var(--gold);
-}
-.process .section-head-right p {
-  color: rgba(244, 236, 213, 0.78);
-}
-.process .eyebrow {
-  color: rgba(244, 236, 213, 0.6);
-}
-.process .eyebrow-rule {
-  background: rgba(244, 236, 213, 0.5);
-}
-.process .eyebrow-num {
-  color: var(--gold);
-}
-
-.process-timeline {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  position: relative;
-}
-
 .process-step {
-  padding: 0 28px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   position: relative;
 }
 
-.process-step + .process-step {
-  padding-left: 28px;
-  border-left: 1px solid rgba(244, 236, 213, 0.18);
+.process-marker {
+  width: 44px;
+  height: 52px;
+  background: #fff;
+  color: var(--on-light);
+  border-radius: var(--r-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-.process-num {
+.process-marker-km {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--blue);
+}
+
+.process-marker-num {
   font-family: var(--display);
-  font-size: clamp(72px, 8vw, 110px);
-  font-weight: 400;
-  line-height: 0.9;
-  color: var(--gold);
-  margin-bottom: 24px;
-  letter-spacing: -0.04em;
+  font-size: 20px;
+  line-height: 1;
 }
 
-.process-num em {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 400;
-}
+.process-marker--goal { background: var(--yellow); }
+.process-marker--goal .process-marker-km { color: var(--on-light); }
 
 .process-step h3 {
-  font-family: var(--display);
-  font-size: clamp(20px, 1.8vw, 24px);
-  font-weight: 400;
-  color: var(--paper);
-  margin-bottom: 12px;
-  letter-spacing: -0.01em;
+  font-family: var(--sans);
+  font-size: 19px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1.1;
 }
 
 .process-step p {
-  font-family: var(--serif);
-  font-size: 18px;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  font-weight: 500;
   line-height: 1.55;
-  color: rgba(244, 236, 213, 0.7);
+  color: var(--text-dim);
 }
 
 @media (max-width: 900px) {
   .process-timeline {
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px 0;
+    gap: 40px 32px;
   }
-  .process-step:nth-child(odd) {
-    padding-left: 0 !important;
-    border-left: none !important;
-  }
+  .process-road { display: none; }
 }
 
-@media (max-width: 540px) {
-  .process-timeline {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .process-step {
-    padding: 36px 0 !important;
-    border-left: none !important;
-  }
-  .process-step + .process-step {
-    border-top: 1px solid rgba(244, 236, 213, 0.18);
-  }
-}
-
-@media (max-width: 760px) {
-  .process {
-    padding: 50px 0 50px;
-  }
-  .process-step h3 {
-    font-size: 20px !important;
-  }
+@media (max-width: 520px) {
+  .process { padding: 56px 0; }
+  .process-timeline { grid-template-columns: 1fr; gap: 32px; }
 }

@@ -94,6 +94,9 @@
   .hero-scroll-line {
     animation: none;
   }
+  .hero-road::before {
+    animation: none;
+  }
   .wa-float::after {
     animation: none;
   }

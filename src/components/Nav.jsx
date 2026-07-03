@@ -1,27 +1,30 @@
 import { useState, useEffect } from 'react';
+import { Plate } from './Icons';
 
 const links = [
+  { l: 'Inicio',        h: '#inicio' },
   { l: 'Servicios',     h: '#servicios' },
   { l: 'Proceso',       h: '#proceso' },
   { l: 'Asesoramiento', h: '#asesoramiento' },
+  { l: 'Ubicación',     h: '#ubicacion' },
   { l: 'Contacto',      h: '#contacto' },
 ];
 
 function MenuIcon() {
   return (
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="3" y1="6"  x2="19" y2="6"  stroke="currentColor" strokeWidth="1.5" strokeLinecap="square"/>
-      <line x1="3" y1="11" x2="19" y2="11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square"/>
-      <line x1="3" y1="16" x2="19" y2="16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square"/>
-    </svg>
+    <span className="nav-burger-bars" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
   );
 }
 
 function CloseIcon() {
   return (
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="5" y1="5" x2="17" y2="17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square"/>
-      <line x1="17" y1="5" x2="5"  y2="17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square"/>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+      <line x1="18" y1="6" x2="6"  y2="18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
     </svg>
   );
 }
@@ -44,12 +47,21 @@ export function Nav({ wa }) {
 
   return (
     <>
-      <header>
-        <nav className={scrolled ? 'scrolled' : ''}>
+      <header className={`nav-bar${scrolled ? ' scrolled' : ''}`}>
+        <nav className="nav-inner">
+          <a href="#inicio" className="nav-brand" aria-label="Gestoría del Automotor — inicio">
+            <Plate code="GA 584 TP" variant="nav" />
+          </a>
+
           <ul className="nav-links">
             {links.map(x => <li key={x.l}><a href={x.h}>{x.l}</a></li>)}
-            <li><a href={wa} target="_blank" rel="noreferrer" className="nav-cta"><span>WhatsApp</span></a></li>
           </ul>
+
+          <div className="nav-meta">
+            <span className="nav-brand-role">Trámites vehiculares</span>
+            <span className="nav-brand-loc">Tupungato · Mendoza</span>
+          </div>
+
           <button
             className="nav-burger"
             onClick={() => setOpen(true)}
@@ -63,6 +75,7 @@ export function Nav({ wa }) {
       </header>
 
       <div
+        id="side-drawer"
         className={`side-drawer${open ? ' open' : ''}`}
         role="dialog"
         aria-modal="true"
@@ -84,7 +97,7 @@ export function Nav({ wa }) {
             className="drawer-cta"
             onClick={() => setOpen(false)}
           >
-            <span>Consultar por WhatsApp</span>
+            Consultar por WhatsApp
           </a>
         </div>
       </div>

@@ -1,128 +1,107 @@
 .advisory {
-  background: var(--paper);
-  padding-bottom: 120px;
+  background: var(--bg);
+  border-top: 3px solid var(--yellow);
+  padding: 112px 0;
 }
 
-/* FIX: advisory-spread ahora es grid de 2 columnas */
-.advisory-spread {
+.advisory-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
+  gap: 56px;
+  align-items: center;
 }
 
-.advisory-quote-mark {
-  font-family: var(--display);
-  font-size: 120px;
-  line-height: 0.6;
-  color: var(--burgundy);
-  font-style: italic;
-  margin-bottom: 16px;
-  font-weight: 400;
-}
-
-.advisory-quote-text {
-  font-family: var(--display);
-  font-size: clamp(26px, 2.8vw, 38px);
-  line-height: 1.2;
-  color: var(--ink);
-  font-weight: 400;
-  letter-spacing: -0.01em;
-}
-
-.advisory-quote-text em {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 400;
-  color: var(--accent-deep);
-}
-
-.advisory-quote-rule {
-  width: 60px;
-  height: 1px;
-  background: var(--burgundy);
-  margin-top: 32px;
-  margin-bottom: 12px;
-}
-
-.advisory-quote-attr {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: var(--ls-normal);
-  padding-top: 20px;
-  text-transform: uppercase;
-  color: var(--ink-2);
-}
-
-.advisory-list {
+/* ── Blue quote card ───────────────────────────────────────── */
+.advisory-card {
+  background: var(--blue);
+  border: 3px solid #fff;
+  border-radius: var(--r-xl);
+  padding: 40px;
   display: flex;
   flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4);
 }
 
-.advisory-item {
+.advisory-card-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.7);
+}
+
+.advisory-card-quote {
+  font-family: var(--sans);
+  font-size: clamp(21px, 2.4vw, 27px);
+  line-height: 1.35;
+  font-weight: 600;
+  color: #fff;
+}
+.advisory-card-quote em { font-style: normal; color: var(--yellow); }
+
+.advisory-card-attr {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.7);
+}
+
+/* ── Body list ─────────────────────────────────────────────── */
+.advisory-body {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.advisory-body h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(30px, 4vw, 42px);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.advisory-body h2 em { font-style: normal; color: var(--yellow); }
+
+.advisory-item { display: flex; gap: 16px; }
+
+.advisory-item-icon {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border: 2px solid var(--yellow);
+  border-radius: var(--r-md);
   display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 28px;
-  padding: 32px 0;
-  border-bottom: 1px solid var(--rule);
-}
-
-.advisory-item:first-child { padding-top: 0; }
-.advisory-item:last-child  { border-bottom: none; }
-
-.advisory-item-num {
-  font-family: var(--mono);
+  place-items: center;
+  color: var(--yellow);
+  font-family: var(--display);
   font-size: 13px;
-  font-weight: 500;
-  letter-spacing: var(--ls-normal);
-  color: var(--accent-deep);
-  padding-top: 6px;
 }
 
 .advisory-item h3 {
-  font-family: var(--display);
-  font-size: clamp(22px, 2.2vw, 30px);
-  font-weight: 400;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-  margin-bottom: 10px;
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 4px;
 }
 
 .advisory-item p {
-  font-family: var(--serif);
-  font-size: 19px;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  font-weight: 500;
   line-height: 1.55;
-  color: var(--ink-2);
-}
-
-/* Eyebrow 05 uses burgundy */
-.advisory .eyebrow-num {
-  color: var(--burgundy);
+  color: var(--text-dim);
 }
 
 @media (max-width: 900px) {
-  .advisory-spread {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
+  .advisory-grid { grid-template-columns: 1fr; gap: 40px; }
 }
 
-@media (max-width: 760px) {
-  .advisory {
-    padding: 60px 0 50px;
-  }
-  .advisory-quote-mark {
-    font-size: 60px;
-  }
-  .advisory-quote-text {
-    font-size: 20px;
-    line-height: 1.4;
-  }
-  .advisory-item {
-    grid-template-columns: auto 1fr;
-    gap: 16px;
-  }
-  .advisory-item-num {
-    white-space: nowrap;
-  }
+@media (max-width: 520px) {
+  .advisory { padding: 56px 0; }
+  .advisory-card { padding: 28px; }
 }

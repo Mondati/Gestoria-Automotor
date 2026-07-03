@@ -5,35 +5,52 @@
 }
 
 :root {
-  --paper: #f4ecd5;
-  --paper-2: #ede2c4;
-  --ink: #1f1a14;
-  --ink-2: #423529;
-  --ink-3: #6b5d45;
-  --rule: #c9b690;
-  --accent: #b89567;
-  --accent-deep: #8a6d44;
-  --gold: #c9a564;
-  --burgundy: #6b2e2a;
-  --display: 'Fraunces', 'Fraunces Variable', serif;
-  --serif: 'Cormorant Garamond', serif;
-  --mono: 'DM Mono', monospace;
-  --sans: 'DM Sans Variable', 'DM Sans', sans-serif;
+  /* ── Surfaces ─────────────────────────────────────────────── */
+  --bg:          #14161a;   /* main dark background */
+  --bg-deep:     #0e1013;   /* darker sections (proceso, contacto, nav) */
+  --surface:     #1b1e24;   /* cards on dark */
+  --surface-2:   #22262e;   /* card hover */
+  --border:      #2c3038;   /* card / hairline borders on dark */
+  --light:       #f2f3f5;   /* light section background */
 
-  --ls-normal: 0.16em;
-  --ls-wide:   0.22em;
-  --ls-tight:  -0.02em;
+  /* ── Text ─────────────────────────────────────────────────── */
+  --text:        #f2f3f5;             /* primary text on dark */
+  --text-dim:    rgba(242,243,245,.65);
+  --text-faint:  rgba(242,243,245,.45);
+  --on-light:    #14161a;             /* text on light/yellow bg */
+  --on-light-dim:#3f4550;
 
-  --section-pad-desktop: 120px;
-  --section-pad-tablet:   80px;
-  --section-pad-mobile:   64px;
+  /* ── Brand accents ───────────────────────────────────────── */
+  --yellow:      #f5c518;   /* primary accent */
+  --yellow-deep: #d9ac0a;   /* yellow hover/press */
+  --blue:        #0d4f9e;   /* registry blue (cards, accents) */
+  --plate-blue:  #2a4fd0;   /* license-plate header blue */
+  --wa:          #25d366;   /* whatsapp green */
+  --wa-deep:     #1eb955;
+
+  /* ── Type ─────────────────────────────────────────────────── */
+  --display: 'Archivo Black', 'Barlow Semi Condensed', sans-serif; /* headlines, big numbers, plate codes */
+  --sans:    'Barlow Semi Condensed', system-ui, sans-serif;       /* body, labels, buttons */
+  /* Legacy aliases kept as safety net for any un-migrated reference */
+  --serif: var(--sans);
+  --mono:  var(--sans);
+
+  --ls-normal: 0.08em;
+  --ls-wide:   0.16em;
+  --ls-tight:  -0.01em;
+
+  /* ── Radii ────────────────────────────────────────────────── */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 14px;
+
+  --section-pad-desktop: 80px;
+  --section-pad-tablet:  64px;
+  --section-pad-mobile:  56px;
 }
 
-html { scroll-behavior: smooth; }
-
-html {
-  overflow-x: hidden;
-}
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 html.drawer-open,
 html.drawer-open body {
@@ -42,31 +59,20 @@ html.drawer-open body {
 
 body {
   font-family: var(--sans);
-  background-color: var(--paper);
-  color: var(--ink-2);
+  background-color: var(--bg);
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   font-feature-settings: 'liga', 'kern';
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 200;
-  opacity: 0.09;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 220px;
-}
+::selection { background: var(--yellow); color: var(--on-light); }
 
-::selection { background: var(--ink); color: var(--paper); }
-
+/* Keep content centered at 1200px (mantener los anchos) */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(24px, 6vw, 96px);
+  padding: 0 clamp(20px, 5vw, 40px);
   width: 100%;
 }
 
@@ -85,11 +91,13 @@ button { font-family: inherit; cursor: pointer; }
   top: -100%;
   left: 0;
   padding: 12px 20px;
-  background: var(--ink);
-  color: var(--paper);
-  font-family: var(--mono);
+  background: var(--yellow);
+  color: var(--on-light);
+  font-family: var(--sans);
+  font-weight: 700;
   font-size: 13px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   z-index: 9999;
   text-decoration: none;
 }

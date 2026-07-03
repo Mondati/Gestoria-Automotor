@@ -40,7 +40,10 @@
       "Bash(Select-Object -ExpandProperty FullName)",
       "Bash(Sort-Object)",
       "Skill(design-md)",
-      "Bash(npx react-doctor@latest *)"
+      "Bash(npx react-doctor@latest *)",
+      "Bash(file public/apple-touch-icon.png)",
+      "Bash(identify public/apple-touch-icon.png)",
+      "Bash(ls -la public/*.png public/*.svg public/robots.txt public/site.webmanifest)"
     ]
   }
 }

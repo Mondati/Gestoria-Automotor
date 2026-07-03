@@ -7,7 +7,7 @@ const WA2 =
 
 export function Closing() {
   return (
-    <section className="closing" id="contacto" data-theme="dark">
+    <section className="closing" id="contacto" tabIndex={-1} data-theme="dark">
       <div className="closing-road" aria-hidden="true"></div>
 
       <div className="closing-content">

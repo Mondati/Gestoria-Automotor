@@ -1,4 +1,3 @@
-import { lazy } from 'react'
 import { useReveal } from './hooks/useReveal'
 import { WASvg } from './components/Icons'
 import { Folio } from './components/Folio'
@@ -8,17 +7,9 @@ import { Trust } from './components/Trust'
 import { Services } from './components/Services'
 import { Process } from './components/Process'
 import { Advisory } from './components/Advisory'
-import { LazyMount } from './components/LazyMount'
-
-const Coverage = lazy(() =>
-  import('./components/Coverage').then(m => ({ default: m.Coverage }))
-)
-const Location = lazy(() =>
-  import('./components/Location').then(m => ({ default: m.Location }))
-)
-const Contact = lazy(() =>
-  import('./components/Contact').then(m => ({ default: m.Closing }))
-)
+import { Coverage } from './components/Coverage'
+import { Location } from './components/Location'
+import { Closing as Contact } from './components/Contact'
 
 import './styles/global.css'
 import './styles/components.css'
@@ -51,9 +42,9 @@ function App() {
         <Services wa={WA1} />
         <Process />
         <Advisory />
-        <LazyMount><Coverage /></LazyMount>
-        <LazyMount><Location /></LazyMount>
-        <LazyMount><Contact /></LazyMount>
+        <Coverage />
+        <Location />
+        <Contact />
       </main>
       <a href={WA1} target="_blank" rel="noreferrer" className="wa-float" aria-label="WhatsApp">
         <WASvg />

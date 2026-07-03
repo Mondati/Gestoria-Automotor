@@ -5,7 +5,7 @@ export function Location() {
   const embedUrl = "https://www.google.com/maps?q=Almirante+Brown+584,+Tupungato,+Mendoza&output=embed";
 
   return (
-    <section className="location" id="ubicacion" data-theme="dark">
+    <section className="location" id="ubicacion" tabIndex={-1} data-theme="dark">
       <div className="container">
         <div className="location-spread">
           <div className="location-info">

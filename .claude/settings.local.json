@@ -43,7 +43,9 @@
       "Bash(npx react-doctor@latest *)",
       "Bash(file public/apple-touch-icon.png)",
       "Bash(identify public/apple-touch-icon.png)",
-      "Bash(ls -la public/*.png public/*.svg public/robots.txt public/site.webmanifest)"
+      "Bash(ls -la public/*.png public/*.svg public/robots.txt public/site.webmanifest)",
+      "Bash(node -e \"console.log\\(require\\('sharp'\\)\\)\")",
+      "Bash(python *)"
     ]
   }
 }
